@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Tourism Career Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-N64lJUJ5M1P6Y5y/GU9fusX16O68PLDn4fZmsuO3vFQO6gOZCXYVkYzgCJ8lCixM2gR5J2WzKIlxNNTBC+VitQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <header>
+        <h1>Tourism Career Hub</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+
+        
+
+        <div class="dropdown">
+            <a href="#">Updates</a>
+            <div class="dropdown-content">
+                <a href="News.html">News Updates</a>
+                <a href="sucess.html">Success Stories</a>
+                <a href="bot.html">Live Chatbot</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <a href="#">Applications</a>
+            <div class="dropdown-content">
+                <a href="applications.html">Varsity Applications</a>
+                <a href="schooler.html">Scholarship</a>
+                <a href="leaner.html">Learnership</a>
+                <a href="bursary.html">Bursaries</a>
+            </div>
+        </div>
+        
+        <div class="dropdown">
+            <a href="#">Careers</a>
+            <div class="dropdown-content">
+                <a href="explorecareer.html">Explore Careers</a>
+                <a href="https://nationalcareers.service.gov.uk/job-categories/travel-and-tourism">Job Applications</a>
+                <a href="personmatch.html">Job personality Match</a>
+                <a href="#">Ebooks</a>
+            </div>
+        </div>
+
+        <a href="about.html">About Us</a>
+      
+    </nav>
+
+    
+    <section class="welcome-section">
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="img/slide.png" style="width:100%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="img/slide1 copy.png" style="width:100%">
+            </div>
+
+           
+
+            <div class="mySlides fade">
+                <img src="img/slide3 copy.png" style="width:100%">
+            </div>
+
+            
+        </div>
+    </section>
+
+    <script>
+        var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    slides[slideIndex-1].style.display = "block";  
+    setTimeout(showSlides, 3000); // Change image every 2 seconds
+}
+
+    </script>
+    
+    <section class="Career-section">
+      <center> <h1>PLAN YOUR CAREER WITH TOURISM CAREER HUB</h1></center> 
+        <div class="career-info">
+            <p>Explore exciting career opportunities in the tourism industry. From tour guides to hotel managers, there's a diverse range of roles waiting for you.</p>
+            <ul class="career-icons">
+                <li>
+                    <div class="career-icon">
+                        <img src="img/tour.jpg" alt="Tour Guide">
+                        <p>Tour Guide</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="career-icon">
+                        <img src="img/hotel.jpeg" alt="Hotel Manager">
+                        <p>Hotel Manager</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="career-icon">
+                        <img src="img/flight.jpeg" alt="Flight Attendant">
+                        <p>Flight Attendant</p>
+                    </div>
+                </li>
+              
+            </ul>
+        </div>
+    </section>
+    
+    
+    
+    <section class="explore-section">
+        <h1>TOP STORIES HIGHLIGHT GLOBAL EVENTS.</h1>
+        <div class="destination-grid">
+            <div class="destination">
+                <img src="img/suc (4).jpg" alt="Destination 1">
+                <p>Siyanda Dlamini <br> Co-founder of  the R350 million regency</p>
+            </div>
+            <div class="destination">
+                <img src="img/IMG-20240506-WA0008.jpg" alt="Destination 2">
+                <p>Nombulelo Guliwe <br> The new appointed tourism CEO</p>
+            </div>
+            <div class="destination">
+                <img src="img//suc (3).jpg" alt="Destination 2">
+                <p>Chef Thapelo Mafatshe <br> Bringing fusion of Mozambican cruise and south african flavours to the world.</p>
+            </div>
+
+            <div class="destination">
+                <img src="img/suc (5).jpg" alt="Destination 2">
+                <p>Tourism industry star awards</p>
+            </div>
+            <div class="destination">
+                <img src="img/suc (1).jpg" alt="Destination 2">
+                <p>South Africa Tourism and Tourism business council SA</p>
+            </div>
+            <div class="destination">
+                <img src="img/suc (2).jpg" alt="Destination 2">
+                <p>Sisa Ntshona <br> Former Tourism CEO, Leads consortium in acquiring and equity stake in terms deam hotel resort.</p>
+            </div>
+           
+        </div>
+    </section>
+    
+    <section class="keepup-section">
+        <h1>KEEP ME UP TO DATE</h1>
+        <div class="subscribe-form">
+            <form action="#" method="POST">
+                <input type="email" name="email" placeholder="Your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <!-- Add more social media icons as needed -->
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Corporate</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Content Library</a></li>
+                    <li><a href="#">Trade</a></li>
+                    <li><a href="#">Media</a></li>
+                    <li><a href="#">Corporate Training</a></li>
+                    <li><a href="#">Become a Supplier</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-column">
+                <h3>Useful Links</h3>
+                <ul>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Research</a></li>
+                    <li><a href="#">Annual Report 23/24</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-column">
+                <h3>Plan Your Trip</h3>
+                <ul>
+                    <li><a href="#">Getting Around SA</a></li>
+                    <li><a href="#">Maps & Guides</a></li>
+                    <li><a href="#">Itineraries and Tours</a></li>
+                    <li><a href="#">Visa Information</a></li>
+                    <li><a href="#">Weather in SA</a></li>
+           
+                </ul>
+            </div>
+                
+            <div class="footer-column">
+                <h3>Travelwise</h3>
+                <ul>
+                    <li><a href="#">Safety in SA</a></li>
+                    <li><a href="#">Health & Medical</a></li>
+                    <li><a href="#">Namola Safety App</a></li>
+                    <li><a href="#">Covid 19 Information</a></li>
+                    <li><a href="#">Emergency Contacts</a></li>
+                    <li><a href="#">Loadshedding</a></li>
+                    <li><a href="#">Responsible Tourism</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-column">
+                <h3>Membership</h3>
+                <ul>
+                    <li><a href="#">Become a Member</a></li>
+                    <li><a href="#">Add Your Listing</a></li>
+                    <li><a href="#">Manage Your Membership</a></li>
+                    <li><a href="#">Members Code of Conduct</a></li>
+                    <li><a href="#">Members Terms & Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
+<style>
+    /* Header style */
+header {
+    background-color: #217d7d;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* Ensure header stays above other content */
+}
+
+/* Navigation style */
+nav {
+    background-color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 100px; /* Adjust top position to leave space for the fixed header */
+    z-index: 999; /* Ensure navigation stays above other content except header */
+}
+
+/* Adjust main content to leave space for the fixed header and navigation */
+main {
+    padding-top: 100px; /* Adjust based on header and navigation height */
+    margin-top: 60px; /* Adjust based on navigation height */
+}
+
+/* Body style */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    line-height: 1.6;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+</style>

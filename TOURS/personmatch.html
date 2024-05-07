@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Tourism Career Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-N64lJUJ5M1P6Y5y/GU9fusX16O68PLDn4fZmsuO3vFQO6gOZCXYVkYzgCJ8lCixM2gR5J2WzKIlxNNTBC+VitQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <header>
+        <h1>Tourism Career Hub</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+
+        <div class="dropdown">
+            <a href="#">Updates</a>
+            <div class="dropdown-content">
+                <a href="News.html">News Updates</a>
+                <a href="sucess.html">Success Stories</a>
+                <a href="bot.html">Live Chatbot</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <a href="#">Applications</a>
+            <div class="dropdown-content">
+                <a href="applications.html">Varsity Applications</a>
+                <a href="schooler.html">Scholarship</a>
+                <a href="leaner.html">Learnership</a>
+                <a href="bursary.html">Bursaries</a>
+            </div>
+        </div>
+        
+        <div class="dropdown">
+            <a href="#">Careers</a>
+            <div class="dropdown-content">
+                <a href="explorecareer.html">Explore Careers</a>
+                <a href="https://nationalcareers.service.gov.uk/job-categories/travel-and-tourism">Job Applications</a>
+               
+                <a href="personmatch.html">Job personality Match</a>
+                <a href="#">Ebooks</a>
+            </div>
+        </div>
+
+        <a href="about.html">About Us</a>
+      
+    </nav>
+
+    <div class="personality-match">
+        <h2>Job Personality Match</h2>
+        <p>Find the perfect job in tourism based on your personality traits.</p>
+        <form id="personalityForm">
+            <div class="personality-choices">
+                <div class="personality-choice red"><input type="checkbox" id="introverted" name="personality[]" value="introverted"><label for="introverted">Introverted</label></div>
+                <div class="personality-choice blue"><input type="checkbox" id="extroverted" name="personality[]" value="extroverted"><label for="extroverted">Extroverted</label></div>
+                <div class="personality-choice green"><input type="checkbox" id="analytical" name="personality[]" value="analytical"><label for="analytical">Analytical</label></div>
+                <div class="personality-choice yellow"><input type="checkbox" id="creative" name="personality[]" value="creative"><label for="creative">Creative</label></div>
+                <div class="personality-choice purple"><input type="checkbox" id="organized" name="personality[]" value="organized"><label for="organized">Organized</label></div>
+                <div class="personality-choice orange"><input type="checkbox" id="adventurous" name="personality[]" value="adventurous"><label for="adventurous">Adventurous</label></div>
+                <div class="personality-choice cyan"><input type="checkbox" id="detail-oriented" name="personality[]" value="detail-oriented"><label for="detail-oriented">Detail-oriented</label></div>
+                <div class="personality-choice magenta"><input type="checkbox" id="flexible" name="personality[]" value="flexible"><label for="flexible">Flexible</label></div>
+                <div class="personality-choice indigo"><input type="checkbox" id="team-player" name="personality[]" value="team-player"><label for="team-player">Team Player</label></div>
+            </div>
+        </form>
+    </div>
+    <div class="find-jobs-button">
+        <button type="button" onclick="findJobs()">Find Jobs</button>
+    </div>
+
+    <div id="jobSuggestions"></div>
+
+    <script>
+        function findJobs() {
+            const form = document.getElementById('personalityForm');
+            const checkboxes = form.querySelectorAll('input[type="checkbox"]:checked');
+            const selectedPersonality = Array.from(checkboxes).map(checkbox => checkbox.value);
+
+            // You can replace this with your logic to generate job suggestions based on the selected personality traits
+            const jobSuggestions = generateJobSuggestions(selectedPersonality);
+
+            const jobSuggestionsElement = document.getElementById('jobSuggestions');
+            jobSuggestionsElement.innerHTML = '<h3>Job Suggestions</h3>';
+            if (jobSuggestions.length === 0) {
+                jobSuggestionsElement.innerHTML += '<p>No jobs found for selected personality traits.</p>';
+            } else {
+                jobSuggestionsElement.innerHTML += '<ul>';
+                jobSuggestions.forEach(job => {
+                    jobSuggestionsElement.innerHTML += `<li>${job}</li>`;
+                });
+                jobSuggestionsElement.innerHTML += '</ul>';
+            }
+        }
+
+        // Example function to generate job suggestions based on selected personality traits
+        function generateJobSuggestions(personalityTraits) {
+            // Here you can implement your logic to generate job suggestions based on personality traits
+            // This is just an example
+            const jobSuggestions = [];
+
+            if (personalityTraits.includes('introverted')) {
+                jobSuggestions.push('Tour Guide');
+            }
+
+            if (personalityTraits.includes('extroverted')) {
+                jobSuggestions.push('Event Coordinator');
+            }
+
+            if (personalityTraits.includes('analytical')) {
+                jobSuggestions.push('Data Analyst');
+            }
+
+            // Add more job suggestions based on other personality traits
+
+            return jobSuggestions;
+        }
+    </script>
+</body>
+</html>
+<style>
+    /* Style for the personality match section */
+.personality-match {
+    background-color: #f9f9f9;
+    padding: 40px;
+    margin: 20px 0;
+    border-radius: 15px;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Style for the personality match title */
+.personality-match h2 {
+    color: #4e4e4e;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* Style for the personality match description */
+.personality-match p {
+    color: #666;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Style for the personality match form */
+.personality-match form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style for the personality match checkboxes */
+.personality-match label {
+    margin-right: 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.personality-match button {
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.personality-match button:hover {
+    background-color: #ff4500;
+}
+
+/* Style for the job suggestions */
+#jobSuggestions {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+}
+
+#jobSuggestions h3 {
+    color: #4e4e4e;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#jobSuggestions ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#jobSuggestions li {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+/* Style for the Find Jobs button */
+.find-jobs-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Style for the personality choices */
+.personality-choices {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.personality-choice {
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 5px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Colors for different personality choices */
+.red { background-color: #ff6347; color: white; }
+.blue { background-color: #1e90ff; color: white; }
+.green { background-color: #32cd32; color: white; }
+.yellow { background-color: #ffd700; color: black; }
+.purple { background-color: #800080; color: white; }
+.orange { background-color: #ff8c00; color: white; }
+.cyan { background-color: #00FFFF; color: black; }
+.magenta { background-color: #FF00FF; color: black; }
+.indigo { background-color: #4B0082; color: white; }
+
+/* Hover effect */
+.personality-choice:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+</style>

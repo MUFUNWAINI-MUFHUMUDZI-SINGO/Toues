@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Tourism Career Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-N64lJUJ5M1P6Y5y/GU9fusX16O68PLDn4fZmsuO3vFQO6gOZCXYVkYzgCJ8lCixM2gR5J2WzKIlxNNTBC+VitQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <h1>Tourism Career Hub</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+
+        <div class="dropdown">
+            <a href="#">Updates</a>
+            <div class="dropdown-content">
+                <a href="News.html">News Updates</a>
+                <a href="sucess.html">Success Stories</a>
+                <a href="bot.html">Live Chatbot</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <a href="#">Applications</a>
+            <div class="dropdown-content">
+                <a href="applications.html">Varsity Applications</a>
+                <a href="schooler.html">Scholarship</a>
+                <a href="leaner.html">Learnership</a>
+                <a href="bursary.html">Bursaries</a>
+            </div>
+        </div>
+        
+        <div class="dropdown">
+            <a href="#">Careers</a>
+            <div class="dropdown-content">
+                <a href="explorecareer.html">Explore Careers</a>
+                <a href="https://nationalcareers.service.gov.uk/job-categories/travel-and-tourism">Job Applications</a>
+                <a href="personmatch.html">Job personality Match</a>
+                <a href="#">Ebooks</a>
+            </div>
+        </div>
+
+        <a href="about.html">About Us</a>
+    </nav>
+
+    <div class="chatbot-container">
+        <div class="chatbot-output" id="chatbotOutput">
+            <div class="chatbot-question">How can I assist you today?</div>
+            <div class="chatbot-answer blue-bg">You can choose from the following options:</div>
+            <div class="chatbot-answer blue-bg">1. Explore career options</div>
+            <div class="chatbot-answer blue-bg">2. Apply for job opportunities</div>
+            <div class="chatbot-answer blue-bg">3. Find a job that matches your personality</div>
+            <div class="chatbot-answer blue-bg">4. Get information about tourism ebooks</div>
+        </div>
+        <input type="text" id="userInput" placeholder="Enter a number...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        const chatbotOutput = document.getElementById('chatbotOutput');
+        const userInput = document.getElementById('userInput');
+
+        function sendMessage() {
+            const message = userInput.value.trim();
+            if (!isNaN(message)) {
+                const response = generateResponse(Number(message));
+                displayMessage(response, 'chatbot');
+                userInput.value = '';
+            } else {
+                alert('Please enter a valid number.');
+            }
+        }
+
+        function displayMessage(message, sender) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add(sender === 'user' ? 'user-message' : 'chatbot-message');
+            if (sender === 'chatbot' && message.includes('<a')) {
+                messageElement.innerHTML = message;
+            } else {
+                messageElement.textContent = message;
+            }
+            chatbotOutput.appendChild(messageElement);
+            chatbotOutput.scrollTop = chatbotOutput.scrollHeight;
+        }
+
+        function generateResponse(choice) {
+            switch(choice) {
+                case 1:
+                    return 'To explore different career options, click <a href="explorecareer.html">here</a>.';
+                case 2:
+                    return 'To apply for job opportunities, click <a href="https://nationalcareers.service.gov.uk/job-categories/travel-and-tourism">here</a>.';
+                case 3:
+                    return 'To find a job that matches your personality, click <a href="personmatch.html">here</a>.';
+                case 4:
+                    return 'For more information about tourism ebooks, please check our website later.';
+                default:
+                    return 'I didn\'t understand that choice.';
+            }
+        }
+    </script>
+
+    <style>
+        .chatbot-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+
+        /* Style for chat messages */
+        .user-message {
+            background-color: #007bff;
+            color: white;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .chatbot-message {
+            background-color: #6c757d;
+            color: white;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        /* Style for user input */
+        #userInput {
+            width: calc(100% - 70px);
+            padding: 8px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        /* Style for send button */
+        button {
+            width: 60px;
+            padding: 8px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Style for links in chatbot messages */
+        .chatbot-message a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        /* Style for chatbot question */
+        .chatbot-question {
+            background-color: #ffc107;
+            color: #333;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        /* Style for chatbot answer */
+        .chatbot-answer {
+            background-color: #007bff;
+            color: white;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</body>
+</html>
